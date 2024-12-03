@@ -1,0 +1,152 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+.bar{
+    width: 19%;
+    height: 20px;
+    border-radius: 100px;
+    border: 2px solid;
+    background-color: rgb(207, 249, 249);
+}
+.keys{
+    width: 49px;
+    height: 25px;
+    border-radius: 100px;
+    border: 2px solid;
+    background-color: cornflowerblue;
+}
+
+</style>
+<body>
+    <form id="form1" onsubmit="evaluation(event)" >
+        <input type="text" id="ip1" class="bar">
+        <br>
+        <input type="button" value="1" class="keys" onclick="input(event)">
+        <input type="button" value="2" class="keys" onclick="input(event)">
+        <input type="button" value="3" class="keys" onclick="input(event)">
+        <input type="button" value="+" class="keys" onclick="input(event)">
+        <input type="button" value="c" class="keys" onclick="clear(event)">
+        <br>
+        <input type="button" value="4" class="keys" onclick="input(event)">
+        <input type="button" value="5" class="keys" onclick="input(event)">
+        <input type="button" value="6" class="keys" onclick="input(event)">
+        <input type="button" value="-" class="keys" onclick="input(event)">
+       <br>
+        <input type="button" value="7" class="keys" onclick="input(event)">
+        <input type="button" value="8" class="keys" onclick="input(event)">
+        <input type="button" value="9" class="keys" onclick="input(event)">
+        <input type="button" value="*" class="keys" onclick="input(event)">
+        <br>
+        <input type="button" value="%" class="keys" onclick="input(event)">
+        <input type="button" value="0" class="keys" onclick="input(event)">
+        <input type="button" value="/" class="keys" onclick="input(event)">
+        <input type="button" value="=" class="keys" onclick="evaluation(event)">
+
+        
+
+    </form>
+    <p id="op"></p>
+    <script>
+        // let op=document.getElementById("op")
+        let form=document.getElementById("form1")
+        let display=document.getElementById("ip1")
+
+        function input(event){
+             display.value+=event.target.value
+
+        }
+
+        function evaluation(event){
+
+          event.preventDefault();
+          let result=eval(display.value);
+        //   op.innerText=result
+          display.value=result;
+
+        
+        }
+        
+
+    </script>
+    
+</body>
+</html> -->
+
+     <!DOCTYPE html>
+     <html lang="en">
+     <head>
+         <meta charset="UTF-8">
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <title>Calculator</title>
+     </head>
+     <style>
+         .bar {
+             width: 19%;
+             height: 20px;
+             border-radius: 100px;
+             border: 2px solid;
+             background-color: rgb(207, 249, 249);
+         }
+         .keys {
+             width: 49px;
+             height: 25px;
+             border-radius: 100px;
+             border: 2px solid;
+             background-color: cornflowerblue;
+         }
+     </style>
+     <body>
+         <form id="form1" onsubmit="evaluation(event)">
+             <input type="text" id="ip1" class="bar">
+             <br>
+             <input type="button" value="1" class="keys" onclick="input(event)">
+             <input type="button" value="2" class="keys" onclick="input(event)">
+             <input type="button" value="3" class="keys" onclick="input(event)">
+             <input type="button" value="+" class="keys" onclick="input(event)">
+             <input type="button" value="c" class="keys" onclick="clearInput()">
+             <br>
+             <input type="button" value="4" class="keys" onclick="input(event)">
+             <input type="button" value="5" class="keys" onclick="input(event)">
+             <input type="button" value="6" class="keys" onclick="input(event)">
+             <input type="button" value="-" class="keys" onclick="input(event)">
+             <br>
+             <input type="button" value="7" class="keys" onclick="input(event)">
+             <input type="button" value="8" class="keys" onclick="input(event)">
+             <input type="button" value="9" class="keys" onclick="input(event)">
+             <input type="button" value="*" class="keys" onclick="input(event)">
+             <br>
+             <input type="button" value="%" class="keys" onclick="input(event)">
+             <input type="button" value="0" class="keys" onclick="input(event)">
+             <input type="button" value="/" class="keys" onclick="input(event)">
+             <input type="button" value="=" class="keys" onclick="evaluation(event)">
+         </form>
+         <p id="op"></p>
+         <script>
+             let display = document.getElementById("ip1");
+     
+             function input(event) {
+                 display.value += event.target.value;
+             }
+     
+             function evaluation(event) {
+                 event.preventDefault();
+                 try {
+                     let result = eval(display.value);
+                     display.value = result;
+                 } catch (error) {
+                     display.value = "Error";
+                 }
+             }
+     
+             function clearInput() {
+                 display.value = "";
+             }
+         </script>
+     </body>
+     </html>
+     
